@@ -1,0 +1,35 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <display-name>MySpringMVC</display-name>
+    <!-- <servlet>
+         <servlet-name>myspringmvc</servlet-name>
+         <servlet-class>burgxun.spring.servlet.DispatcherServlet</servlet-class>
+         <load-on-startup>2</load-on-startup>
+     </servlet>
+     <servlet-mapping>
+         <servlet-name>myspringmvc</servlet-name>
+         <url-pattern>/</url-pattern>
+     </servlet-mapping>-->
+
+
+    <servlet>
+        <servlet-name>burgxundispatcherServlet</servlet-name>
+        <servlet-class>burgxun.spring.servlet.BurgxunHandlerServlet</servlet-class>
+        <init-param>
+            <param-name>basePackage</param-name>
+            <param-value>burgxun.spring</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>burgxundispatcherServlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
