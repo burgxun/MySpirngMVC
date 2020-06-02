@@ -80,7 +80,7 @@ public class BurgxunHandlerServlet extends HttpServlet {
         String requestURI = request.getRequestURI();
 
         String path = requestURI.replaceAll(contextPath, "");
-        path=path.substring(0,path.lastIndexOf("."));
+        path = path.substring(0, path.lastIndexOf("."));
         System.out.println("path:" + path);
 
         Method method = (Method) Container.handlerMapping.get(path);
@@ -97,15 +97,7 @@ public class BurgxunHandlerServlet extends HttpServlet {
             }
             if (object != null) {
                 View view = (View) object;
-                if (view.getDispatchAction().equals("forward")) {
-                    //使用服务器端跳转方式
-                    request.getRequestDispatcher(view.getUrl()).forward(request, response);
-                } else if (view.getDispatchAction().equals("redirect")) {
-                    //使用客户端跳转方式
-                    response.sendRedirect(request.getContextPath() + view.getUrl());
-                } else {
-                    request.getRequestDispatcher(view.getUrl()).forward(request, response);
-                }
+                request.getRequestDispatcher(view.getUrl()).forward(request, response);
             }
         }
 

@@ -9,18 +9,9 @@ package burgxun.spring.utils;
 public class View {
 
     private String url;
-    private String dispatchAction = "forward";
 
     public View(String url) {
         this.url = url;
-    }
-
-    public String getDispatchAction() {
-        return dispatchAction;
-    }
-
-    public void setDispatchAction(String dispatchAction) {
-        this.dispatchAction = dispatchAction;
     }
 
     public String getUrl() {

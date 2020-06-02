@@ -25,9 +25,8 @@ public class MyTestController {
 
     //使用RequestMapping注解指明forward1方法的访问路径
     @RequestMapping("/login")
-    public View forward1() {
+    public View login() {
         System.out.println("login...");
-        testService.test();
         return new View("/jsps/login.jsp");
     }
 
@@ -35,10 +34,10 @@ public class MyTestController {
     @RequestMapping(value = "/index")
     public View index() {
         System.out.println("index...");
-        testService.test();
         String name = WebApplicationContext.requestThreadLocal.get().getParameter("username");
         ViewData viewData = new ViewData();
-        viewData.setItem("showMsg", "欢迎登录：" + name);
+        String showMsg = testService.test(name);
+        viewData.setItem("showMsg", showMsg);
         return new View("/jsps/index.jsp");
     }
 }

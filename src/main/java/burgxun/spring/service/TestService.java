@@ -11,7 +11,7 @@ import burgxun.spring.annotation.Service;
 @Service("testService")
 public class TestService {
 
-    public String test() {
-        return " Hello My MVC";
+    public String test(String name) {
+        return " Hello " + name + " Welcome To My MVC";
     }
 }
