@@ -97,6 +97,7 @@ public class BurgxunHandlerServlet extends HttpServlet {
             }
             if (object != null) {
                 View view = (View) object;
+                /*服务器内部转发*/
                 request.getRequestDispatcher(view.getUrl()).forward(request, response);
             }
         }

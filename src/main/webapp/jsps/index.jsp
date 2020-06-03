@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
+<label>ShowMsg is :</label>
 <label style="color: red;">${showMsg}</label>
 </body>
 </html>
